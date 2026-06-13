@@ -8,22 +8,22 @@ const slides = [
     label: "Celebrate Life's Precious Moments",
     desktop: "/images/hero-slider-desktop.png",
     mobile: "/images/hero-slider-mobile.png",
-    desktopCta: "left-[6%] top-[63%] h-[7%] w-[18%]",
-    mobileCta: "left-[31%] top-[34%] h-[4.5%] w-[38%]"
+    desktopCta: "left-[6%] top-[55%] h-[8%] w-[20%]",
+    mobileCta: "left-[20%] top-[28%] h-[5%] w-[60%]"
   },
   {
     label: "Crafted With Trust. Worn With Pride.",
     desktop: "/images/hero-slider-trust-desktop.png",
     mobile: "/images/hero-slider-trust-mobile.png",
-    desktopCta: "left-[6.5%] top-[68%] h-[7.5%] w-[18%]",
-    mobileCta: "left-[29%] top-[39%] h-[5%] w-[42%]"
+    desktopCta: "left-[6%] top-[55%] h-[8%] w-[22%]",
+    mobileCta: "left-[10%] top-[28%] h-[5%] w-[80%]"
   },
   {
     label: "Timeless Beauty. Lasting Value.",
     desktop: "/images/hero-slider-timeless-desktop.png",
     mobile: "/images/hero-slider-timeless-mobile.png",
-    desktopCta: "left-[7%] top-[79%] h-[7%] w-[22%]",
-    mobileCta: "left-[12%] top-[50%] h-[5%] w-[48%]"
+    desktopCta: "left-[6%] top-[55%] h-[8%] w-[22%]",
+    mobileCta: "left-[10%] top-[35%] h-[5%] w-[80%]"
   }
 ];
 
@@ -50,7 +50,8 @@ export function HeroSection() {
     <section id="home" className="relative overflow-hidden border-b gold-border bg-[var(--deep)] pt-24 md:pt-32">
       <h1 className="sr-only">Ponkudam Gold & Diamond hero slider</h1>
       <div className="relative w-full">
-        <div className="relative hidden aspect-[1792/1024] w-full md:block">
+        {/* Desktop slider — 1672×941 aspect ratio */}
+        <div className="relative hidden w-full md:block" style={{ aspectRatio: "1672/941" }}>
           {slides.map((slide, index) => (
             <Image
               key={slide.desktop}
@@ -65,7 +66,8 @@ export function HeroSection() {
             />
           ))}
         </div>
-        <div className="relative aspect-[944/2048] w-full md:hidden">
+        {/* Mobile slider — 941×1672 aspect ratio */}
+        <div className="relative w-full md:hidden" style={{ aspectRatio: "941/1672" }}>
           {slides.map((slide, index) => (
             <Image
               key={slide.mobile}
